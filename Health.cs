@@ -2,9 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*Stephanie Munday
+ * ID: 2343625
+ * smunday@chapman.edu
+ * CPSC 245-01
+ * Tower Defense Sprint I
+ *
+ * Health script - accounts health of castle, monsters
+ */
+
 public class Health : MonoBehaviour
 {
-    public bool isAlive = true;
+    public bool IsAlive = true;
 
     private TextMesh tm;
     // Start is called before the first frame update
@@ -24,6 +33,7 @@ public class Health : MonoBehaviour
         return tm.text.Length;
     }
 
+    //decreases health and sets status boolean IsAlive which is checked against in other scripts
     public void decrease()
     {
         if (current() > 1)
@@ -32,7 +42,7 @@ public class Health : MonoBehaviour
         }
         else
         {
-            isAlive = false;
+            IsAlive = false;
             //Debug.Log("Monster destroyed");
             Destroy(transform.parent.gameObject); //destroys monster
         }
